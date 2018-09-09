@@ -99,6 +99,7 @@ static int hello_init(void)
 	unsigned char v;
 	unsigned Limit=0,Base=0,mask=0;
 
+
 	store_gdt(&gdtptr);	
 	
 	printk("\n\n\n");
@@ -170,7 +171,7 @@ static int hello_init(void)
 
 	printk("far jumping~\n");
 
-		
+		/*
 	asm __volatile__ (".byte 0xEA");
 	asm __volatile__ (".byte 0x00");
 	asm __volatile__ (".byte 0x00");
@@ -197,13 +198,13 @@ static int hello_init(void)
 
 		printk("==================================================\n");
 	}
-
+*/
 out:
-	printk("returned ...!!!\n");
+	printk("returned ...!!!\n"); 
 	return 0;
 }
 
-static int hello_exit(void)
+static void hello_exit(void)
 {
 
 	printk("end module\n=========================================================\n");
